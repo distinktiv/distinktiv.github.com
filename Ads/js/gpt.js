@@ -29,14 +29,16 @@ base.gpt = (function(){
        renderAd : function (parentId, position, sizesArray){
            googletag.cmd.push(function() {
         	   googletag.pubads().enableSingleRequest();
-               googletag.defineSlot(config.adUnit , sizesArray, parentId).addService(googletag.pubads())
+               var slot = googletag.defineSlot(config.adUnit , sizesArray, parentId).addService(googletag.pubads())
                .setTargeting('pos',[position]);
                
                googletag.pubads().enableAsyncRendering();
                googletag.enableServices();
            });
  
-           googletag.cmd.push(function() { googletag.display(parentId); });
+           googletag.cmd.push(function() { 
+            googletag.display(parentId);
+            googletag.pubads().refresh([slot]) });
        }
    }
    

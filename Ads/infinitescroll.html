@@ -1,0 +1,141 @@
+<html>
+<head>
+<title>Infinite Scroll Example</title>
+
+<script>
+ // Load GPT
+ var googletag = googletag || {};
+ googletag.cmd = googletag.cmd || [];
+ (function(){
+   var gads = document.createElement('script');
+   gads.async = true;
+   var useSSL = 'https:' == document.location.protocol;
+   gads.src = (useSSL ? 'https:' : 'http:') +
+       '//www.googletagservices.com/tag/js/gpt.js';
+   var node = document.getElementsByTagName('script')[0];
+   node.parentNode.insertBefore(gads, node);
+   })();
+</script>
+
+<script>
+/* googletag.cmd.push(function() {
+
+   // Declare any slots initially present on the page
+   googletag.defineSlot('/5479/sri.testing2/homepage', [[300,250],[300,600],[300,1050]], 'leaderboard').
+       setTargeting("pos","top").
+       addService(googletag.pubads());
+
+   // Infinite scroll requires SRA
+   googletag.pubads().enableSingleRequest();
+
+   // Disable initial load, we will use refresh() to fetch ads.
+   // Calling this function means that display() calls just
+   // register the slot as ready, but do not fetch ads for it.
+   googletag.pubads().disableInitialLoad();
+
+   // Enable services
+   googletag.enableServices();
+ });*/
+//base.gpt.renderAd("leaderboard", "top", [[300,250],[300,600],[300,1050]]);
+
+ // Function to generate unique names for slots
+ var nextSlotId = 1;
+ function generateNextSlotName() {
+   var id = nextSlotId++;
+   return 'adslot' + id;
+ }
+
+ // Function to add content to page, mimics real infinite scroll
+ // but keeps it much simpler from a code perspective.
+ function moreContent() {
+
+   // Generate next slot name
+   var slotName = generateNextSlotName();
+   var button = document.getElementsByTagName("button")[0];
+
+
+   // Create a div for the slot
+   var slotDiv = document.createElement('div');
+   slotDiv.id = slotName; // Id must be the same as slotName
+   document.getElementById("container").getElementsByTagName("TEXT")[0].appendChild(slotDiv);
+
+   // Create and add fake content 1
+   var h1=document.createElement("H2")
+   var text1=document.createTextNode("Dynamic Fake Content 1");
+   h1.appendChild(text1);
+   document.getElementById("container").getElementsByTagName("TEXT")[0].appendChild(h1);
+
+   // Create and add fake content 2
+   var h2=document.createElement("H2")
+   var text2=document.createTextNode("Dynamic Fake Content 2");
+   h2.appendChild(text2);
+   document.getElementById("container").getElementsByTagName("TEXT")[0].appendChild(h2);
+
+   // Define the slot itself, call display() to 
+   // register the div and refresh() to fetch ad.
+/*   googletag.cmd.push(function() {
+     var slot = googletag.defineSlot('/5479/sri.testing2/homepage', [[300,250],[300,600],[300,1050]], slotName).
+         setTargeting("pos","top").
+         addService(googletag.pubads());
+    ////base.gpt.renderAd("gpt-ad-bigbox-top1", "top", [[300,250],[300,600],[300,1050]]);
+     // Display has to be called before
+     // refresh and after the slot div is in the page.
+     googletag.display(slotName);
+     googletag.pubads().refresh([slot]);
+   });*/
+  //base.gpt.renderAd(slotName, "bottom", [[300,250],[300,600],[300,1050]]);
+  base.gpt.renderAd(slotName, "top", [[728,90]]);
+
+ }
+</script>
+
+<script type="text/javascript" src="js/gpt.js" charset="utf-8" ></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<link rel='stylesheet' type='text/css' href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+</head>
+
+<body>
+<div class="container" id="container">
+ <!-- First fake content -->
+ <h2> Initial Fake Content </h2>
+
+
+
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">GPT Test Page</a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class=""><a href="ads.html">Standard</a></li>
+          <li class="active"><a href="">Infinite Scroll</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+
+ <!-- First ad -->
+ <div id="leaderboard"> 
+     <script type="text/javascript">
+       base.gpt.renderAd("leaderboard", "top", [[728,90]]);
+     </script> 
+ </div>
+
+ <!-- More initial fake content -->
+ <text>
+  <h2> Initial Fake Content 1 </h2>
+  <h2> Initial Fake Content 2 </h2>
+ </text>
+
+ <!-- Button to load more content dynamically. -->
+ <button type="button" class="btn btn-danger" id="button" onclick="moreContent()">More Content</button>
+</div>
+</body>
+</html>
