@@ -2,7 +2,7 @@ $(function () {
 
 	$('.data-item').on('click', function(event){
 		event.preventDefault();
-		history.pushState({key:'article'},'Mon titre', 'article1');
+		history.pushState({key:'article'},'Mon titre', '');
 	})
 
 	window.onpopstate = function(event){
