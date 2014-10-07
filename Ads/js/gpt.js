@@ -9,7 +9,7 @@ base.gpt = (function(){
  
    function setupConfig(){
        var config   = config || {};
-       config.adUnit = "/5479/sri.testing2/homepage";
+       config.adUnit = "/5479/sri.testing5/homepage";
        return config;
    }
  
