@@ -16,7 +16,7 @@
             siteTag: "CANALD",
             autoStart:true,
             ageRestricted:false,
-            refId: "D0143159_0101ACH",
+            refId: "b867f4fb74cb0773bd834b621e6c2b58d3e36418",
             video: {
                 duration:2695,
                 rating: "G"
@@ -24,7 +24,38 @@
             videoType: "Épisodes complets",
             gptAdUnit1: "/5479/sri.canald",
             gptAdUnit2: "webtele",
-            gptAdKeys: gptAdKeys
+            gptAdKeys: gptAdKeys,
+            currentVideoIndex: 0,
+            videoArray: ['b8702712f1882f930c092e3aa62438e3d4b3c9d0',
+                '1e7ec6541b764b7cd0ebf0fc7a06385087e651b5',
+                '2c3f281fec55b2f2c77f50b5bf245711e0b0f76b',
+            ],
+            svideoArray: [
+                {
+                    name: "Bird - Chickadee",
+                    id : 'b8702712f1882f930c092e3aa62438e3d4b3c9d0'
+                },
+                {
+                    name: "Bird - Common Redpoll",
+                    id : '1e7ec6541b764b7cd0ebf0fc7a06385087e651b5'
+                },
+                {
+                    name: "Insect - Butterfly",
+                    id : '2c3f281fec55b2f2c77f50b5bf245711e0b0f76b'
+                },
+                {
+                    name: "Bird - Woodpecker",
+                    id : '37639e30be1880f7441c068badb19fd4f062d510'
+                },
+                {
+                    name: "Bird - Magpie",
+                    id : '003b14a18bbf47156e26736cefc4450c53a3cddf'
+                },
+                {
+                    name: "Bird - Peacock",
+                    id : '9fca34f915b77d2eeeefa3df865ec6ec6eab2297'
+                }
+            ]
         });
 
         $(document).on("tveMobileReady", function (e, tveMobile) {
@@ -38,37 +69,6 @@
         });
     </script>
 
-    <!-- VERSION LIGHT script type="text/javascript">
-       var FBC = {};
-       FBC.gptAdUnit1 = "/5479/sri.canalvie/webtele" ;
-       FBC.adSz = "9x10";
-
-       FBC.onTemplateLoaded = function (experienceID) {
-           brightcove.createExperiences();
-           var player = brightcove.api.getExperience(experienceID);
-           var APIModules = brightcove.api.modules.APIModules;
-
-           FBC.playerType = player.type;
-           FBC.mediaEvent = brightcove.api.events.MediaEvent;
-           FBC.advertising = player.getModule(APIModules.ADVERTISING);
-       };
-
-       FBC.onTemplateReady = function () {
-           var adUnit = FBC.gptAdUnit1;
-           if (FBC.playerType === "html") {
-               adUnit += "html5";
-           }
-           var adServerUrl = "http://pubads.g.doubleclick.net/gampad/ads?iu=" + adUnit
-           + "&sz=" + FBC.adSz + "&gdfp_req=1&env=vp&output=xml_vast2&unviewed_position_start=1";
-
-           var adPolicy = {};
-           adPolicy.adServerURL = adServerUrl;
-           adPolicy.prerollAds = true;
-           adPolicy.adPlayCap = 1;
-           FBC.advertising.setAdPolicy(adPolicy);
-       }
-    </script -->
-
 </head>
 
 <body>
@@ -79,13 +79,13 @@
         <param name="width" value="796" />
         <param name="height" value="449" />
 
-        <param name="playerID" value="3450496672001" />
-        <param name="playerKey" value="AQ~~,AAACoOybPqE~,U0YPm6r--gbUl45Ufpw-oNkR4j8yPVna" />
+        <param name="playerID" value="4298174103001" />
+        <param name="playerKey" value="AQ~~,AAACBUhPeWE~,JQ-fn7DSbmm9QfjbqvQgXhiME9Nizab-" />
 
         <param name="isVid" value="true" />
         <param name="isUI" value="true" />
         <param name="wmode" value="transparent" />
-        <param name="@videoPlayer" value="ref:D0050488_0101AGH" />
+        <param name="@videoPlayer" value="ref:b867f4fb74cb0773bd834b621e6c2b58d3e36418" />
         <param name="includeAPI" value="true" />
         <param name="templateLoadHandler" value="bcplayer.onTemplateLoaded" />
         <param name="templateReadyHandler" value="bcplayer.onTemplateReady" />
