@@ -565,8 +565,9 @@ var bcplayer = (function() {
             videoPlayer.loadVideoByReferenceID(newVideo);
             currentVideoIndex++
 
+        } else{
+            isMediaComplete = true;
         }
-
     };
 
     return {
