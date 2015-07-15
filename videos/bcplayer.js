@@ -83,6 +83,7 @@ var bcplayer = (function() {
         getAdEvent,
         triggerAdOnSeek, updateLatestPositions, getBeforeSeekPosition, forceMidroll, logCuePoints, convertToTimecode,
         loadVideo,
+        getCurrentVideoIndex,
         log;
 
     // METHODS ======================================================================================================
