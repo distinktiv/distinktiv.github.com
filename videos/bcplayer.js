@@ -48,7 +48,7 @@ var bcplayer = (function() {
         refId = null,
         templateReadyDone,
         comscoreBeacon,
-        withLogs = false,
+        withLogs = true,
         currentVideoIndex,
         videoArray = [],
 
