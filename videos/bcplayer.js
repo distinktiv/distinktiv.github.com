@@ -486,6 +486,11 @@ var bcplayer = (function() {
     getIsMidroll = function() {
         return isMidroll;
     };
+
+    getCurrentVideoIndex = function(){
+        return currentVideoIndex;
+    };
+
     getPlayer = function() {
         return player;
     };
@@ -574,6 +579,7 @@ var bcplayer = (function() {
         getPlayer: getPlayer,
         getAPIModules: getAPIModules,
         getMediaEvent: getMediaEvent,
+        getCurrentVideoIndex: getCurrentVideoIndex,
         getAdEvent: getAdEvent
     };
 }());
