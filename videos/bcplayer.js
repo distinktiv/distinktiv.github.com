@@ -357,9 +357,9 @@ var bcplayer = (function() {
     };
 
     onMediaComplete = function(event) {
-        loadVideo();
         isMediaComplete = true;
-        //streamSense.notify(ns_.StreamSense.PlayerEvents.END, {}, event.position * 1000);
+        loadVideo();
+        streamSense.notify(ns_.StreamSense.PlayerEvents.END, {}, event.position * 1000);
     };
 
     setAds = function() {
