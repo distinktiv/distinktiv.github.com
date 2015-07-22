@@ -84,6 +84,7 @@ var bcplayer = (function() {
         triggerAdOnSeek, updateLatestPositions, getBeforeSeekPosition, forceMidroll, logCuePoints, convertToTimecode,
         loadVideo,
         getCurrentVideoIndex,
+        toto,
         log;
 
     // METHODS ======================================================================================================
@@ -570,6 +571,10 @@ var bcplayer = (function() {
         }
     };
 
+    toto = function(){
+        console.log("Baton*************");
+    }
+
     return {
         init: init,
         onTemplateLoaded: onTemplateLoaded,
@@ -582,6 +587,7 @@ var bcplayer = (function() {
         getAPIModules: getAPIModules,
         getMediaEvent: getMediaEvent,
         getCurrentVideoIndex: getCurrentVideoIndex,
+        toto: toto,
         getAdEvent: getAdEvent
     };
 }());
