@@ -81,10 +81,9 @@ var bcplayer = (function() {
         getAPIModules,
         getMediaEvent,
         getAdEvent,
-        triggerAdOnSeek, updateLatestPositions, getBeforeSeekPosition, forceMidroll, logCuePoints, convertToTimecode,
+        triggerAdOnSeek, updateLatestPositions, getBeforeSeekPosition, forceMidroll, logCuePoints, convertToTimecode, displayNextVideoTitle,
         loadVideo,
         getCurrentVideoIndex,
-        toto,
         log;
 
     // METHODS ======================================================================================================
@@ -237,6 +236,25 @@ var bcplayer = (function() {
         // array of latestPositions so we can find one < seekPosition
         updateLatestPositions(currentPosition);
 
+        //Display next video Titlt
+        displayNextVideoTitle(event.position, event.duration)
+
+
+    };
+
+    displayNextVideoTitle = function(pos, dur){
+        var nextVideoTitle;
+        if ( (dur - pos) < 10 ) {
+
+            if(currentVideoIndex < videoArray.length){
+                //set new Video
+                nextVideoTitle = videoArray[currentVideoIndex + 1].title;
+
+                document.getElementById("label").innerHTML = "Next Video: " + nextVideoTitle;
+            }
+        }else{
+            document.getElementById("label").innerHTML = "";
+        }
     };
 
     // latestPositions is an array of the 20 latest position
@@ -561,7 +579,7 @@ var bcplayer = (function() {
         var newVideo;
         if(currentVideoIndex < videoArray.length){
             //set new Video
-            newVideo = videoArray[currentVideoIndex];
+            newVideo = videoArray[currentVideoIndex].id;
             //load new video
             videoPlayer.loadVideoByReferenceID(newVideo);
             currentVideoIndex++
@@ -570,10 +588,6 @@ var bcplayer = (function() {
             isMediaComplete = true;
         }
     };
-
-    toto = function(){
-        console.log("Baton*************");
-    }
 
     return {
         init: init,
@@ -587,7 +601,6 @@ var bcplayer = (function() {
         getAPIModules: getAPIModules,
         getMediaEvent: getMediaEvent,
         getCurrentVideoIndex: getCurrentVideoIndex,
-        toto: toto,
         getAdEvent: getAdEvent
     };
 }());
