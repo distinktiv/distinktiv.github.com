@@ -1,0 +1,36 @@
+tmp
+work
+*target
+*.iml
+rebel.xml
+.project
+.classpath
+repository/astral
+*.zip
+velocity.log
+bin
+tools/scripts/recipes
+*.DS_Store
+java_pid*
+contentcache
+filescache
+webapp-front/src/main/webapp/js
+idea/
+server-content-hub/overlays/
+server-filestorage/overlays/
+webapp-dispatcher/src/main/webapp/js/canald/ui.require/.svn/
+changelog.txt
+.idea/
+*.error
+*.svn
+*~
+out/*
+webapp-dispatcher/src/test/webapp/js/*/node_modules/
+tools/jake/node_modules/
+*.ucls
+.settings
+**/.settings
+*.classpath
+<<<<<<< .working
+*.log=======
+logs/*>>>>>>> .merge-right.r17318
